@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  <link rel="stylesheet" href="./styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@500;700;800&display=swap" rel="stylesheet">
+  <title>Frontend Mentor | Results summary component</title>
+</head>
+<body>
+<div id="card">
+    <div class="half-card left">
+        <h3 class="gray-text">Your Result</h3>
+        <div id="score-circle">
+            <p id="total-score"></p>
+            <p class="gray-text">of 100</p>
+        </div>
+        <h2>Great</h2>
+        <p class="gray-text">You scored higher than 65% of the people who have taken these tests.</p>
+    </div>
+    <div class="half-card right">
+        <h3 id="summary">Summary</h3>
+        <div class="test">
+            <span><img src="./assets/images/icon-reaction.svg" alt="Reaction logo"><p>Reaction</p></span>
+            <span><p class="result">?&nbsp&nbsp&nbsp</p><p>/ 100</p></span>
+        </div>
+        <div class="test">
+            <span><img src="./assets/images/icon-memory.svg" alt="Memory logo"><p>Memory</p></span><span><p class="result">?&nbsp&nbsp&nbsp</p><p>/ 100</p></span>
+        </div>
+        <div class="test">
+            <span><img src="./assets/images/icon-verbal.svg" alt="Verbal logo"><p>Verbal</p></span><span><p class="result">?&nbsp&nbsp&nbsp</p><p>/ 100</p></span>
+        </div>
+        <div class="test">
+            <span><img src="./assets/images/icon-visual.svg" alt="Visual logo"><p>Visual</p></span><span><p class="result">?&nbsp&nbsp&nbsp</p><p>/ 100</p></span>
+        </div>
+        <button id="Continue">Click to see results</button>
+    </div>
+</div>
+<script >
+// ----- GET DATA FROM API -----
+// ----- GET DATA FROM API -----
+
+const req=new XMLHttpRequest();
+req.open("GET","./data.json", true);
+req.send();
+req.onload=function(){
+    const arr=JSON.parse(req.responseText);
+
+// ----- LOAD SCORE ON LEFT CARD ------   
+// ----- LOAD SCORE ON LEFT CARD ------
+
+// ----- RETRIEVE TOTAL SCORE FROM .JSON FILE
+
+    // ----- ADD ALL SCORES AND DIVIDE BY 4 
+    let totalScore=Math.round(arr.reduce((sum,item)=>sum+(item["score"]),0)/4)
+
+    // ----- FUNCTION TO GO FROM 0 TO "totalScore"
+    let count=0; 
+
+    let counter =function(){ 
+        count < totalScore ? count+=1 : "";
+        return count
+    }
+
+    // ----- CALL FUNCTION REPEATEDLY UNTIL IT REACHES THE totalScore VALUE
+    setInterval(()=>{
+    document.getElementById("total-score").textContent=counter()
+    },10)
+
+// ----- PRESS BUTTON TO LOAD RESULTS -----
+// ----- PRESS BUTTON TO LOAD RESULTS -----
+
+document.getElementById("Continue").onclick=function(){
+            
+            arr.forEach((item,i)=>{
+            document.getElementsByClassName("result")[i].innerHTML=arr[i]["score"]+"&nbsp"+"&nbsp";
+            })
+
+            ;
+            document.getElementById("Continue").textContent="Challenge Completed :)"
+        }
+
+}  
+</script>
+</body>
+</html>

@@ -1,0 +1,339 @@
+* {
+    box-sizing:border-box
+}
+
+:root {
+    font-family: "Hanken Grotesk";
+}
+
+body {
+    height:100vh;
+    min-height:500px;
+    max-width: 1440px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background-color:hsl(221, 100%, 96%)
+}
+
+#card {
+    box-shadow:0 0 10px 0 hsla(0, 0%, 38%, 0.318);
+    height:430px;
+    display:flex;
+    border-radius:25px;
+    background-color:white;
+}
+
+p {
+    text-align:center;
+    display:inline-block;
+    color:white;
+}
+
+.card {
+    width:300px;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:space-between;
+    padding: 2.5em 2em 2.5em 2em;
+    /* padding-top: 2em;
+    padding-left:2em;
+    padding-right:2em;
+    padding-bottom:70px; */
+    border-radius:25px;
+}
+
+.card *{
+    margin:0;
+}
+
+/* ----- L E F T    C A R D ----- */
+/* ----- L E F T    C A R D ----- */
+
+.left {
+    background-image:linear-gradient(hsl(252, 100%, 67%), hsl(241, 81%, 54%));
+}
+
+.left *{
+    color:white;
+    text-align:center;
+}
+
+.gray-text{
+    color:hsl(241, 100%, 89%);
+}
+
+#score-circle{
+    background-image:linear-gradient(hsla(256, 72%, 46%, 1),hsla(241, 72%, 46%, 0));
+    border-radius:50%;
+    width:160px;
+    height:160px;
+    displaY:flex;
+    flex-direction:column;
+    justify-content:center;
+    flex-shrink:0;
+
+    animation-name:fadein-pop;
+    animation-duration:0.6s;
+    animation-timing-function:ease-in-out;
+
+}
+
+#score-circle *{
+    margin:0;
+}
+
+#total-score{
+    font-size:60px;
+    font-weight:bold;
+}
+
+/* ---- FADE-IN ANIMATIONS */
+/* ---- FADE-IN ANIMATIONS */
+
+.left h3:first-child {
+    animation-name:fadein;
+    animation-duration:0.4s;
+    animation-delay:0.2s;
+    animation-fill-mode: backwards;
+}
+
+.left h2{
+    animation-name:fadein;
+    animation-duration:0.5s;
+    animation-delay:0.9s;
+    animation-fill-mode: backwards;
+}
+
+.left > p:last-child{
+    animation-name:fadein;
+    animation-duration:0.5s;
+    animation-delay:1.5s;
+    animation-fill-mode: backwards;
+}
+
+/* ---- R I G H T    C A R D ---- */
+/* ---- R I G H T    C A R D ---- */
+
+.right {
+    background-color:white;
+    gap:1em;
+}
+
+#summary{
+    align-self:flex-start;
+}
+
+.test{
+    width:100%;
+    height:45px;
+    background-color:hsla(0, 100%, 67%, 6%);
+    border-radius:0.5em;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:1em;
+
+    margin:0 auto;
+    /* padding:0;  */
+}
+
+
+.test:nth-child(3) {background-color:hsla(39, 100%, 56%, 6%)}
+.test:nth-child(4) {background-color:hsla(166, 100%, 37%, 6%)}
+.test:nth-child(5) {background-color:hsla(234, 85%, 45%, 6%)} */
+
+.test p {
+    font-size:14px;
+}
+
+.test span {
+    /* border:1px solid red; */
+    display:flex;
+    align-items:center;
+    margin:0;
+    padding:0; 
+}
+
+.test img{
+    height:16px; 
+    margin-right:7px;
+}
+
+.test:nth-child(2) span:first-child p{color:hsl(0, 100%, 67%)} 
+.test:nth-child(3) span:first-child p{color:hsl(39, 100%, 56%)}
+.test:nth-child(4) span:first-child p{color:hsl(166, 100%, 37%)}
+.test:nth-child(5) span:first-child p{color:hsl(234, 85%, 45%)}
+
+.test span:last-child p:first-child{
+    color:black;
+    font-weight:bold;
+}
+
+.test span:last-child p:last-child{
+    color:hsl(241, 100%, 89%);
+}
+
+.test:nth-child(2), .test:nth-child(3), .test:nth-child(4) {
+margin-bottom:-14px;
+}
+
+button {
+    width:100%;
+    min-height:46px;
+    border-radius:25px;
+    background-color:hsl(224, 30%, 27%);
+    border:none;
+
+    /* margin-top: 20px; */
+
+    font-family: "Hanken Grotesk";
+    color:white;
+    font-size:15px;
+}
+
+button:hover{
+    cursor:pointer;
+    background-image:linear-gradient(hsl(252, 100%, 67%), hsl(241, 81%, 54%));
+}
+
+/* ---- FADE-IN ANIMATIONS */
+/* ---- FADE-IN ANIMATIONS */
+
+.right h3:first-child {
+    animation-name:fadein;
+    animation-duration:0.4s;
+    animation-delay:2s;
+    animation-fill-mode: backwards;
+}
+
+.right .test{
+    animation-name:fadein;
+    animation-duration:0.4s;
+    animation-fill-mode: backwards;
+}
+
+.right .test:nth-child(2){
+    animation-delay:2.2s;
+}
+.right .test:nth-child(3){
+    animation-delay:2.4s;
+}
+.right .test:nth-child(4){
+    animation-delay:2.6s;
+}
+.right .test:nth-child(5){
+    animation-delay:2.8s;
+}
+
+.right > p:last-child{
+    animation-name:fadein;
+    animation-duration:0.5s;
+    animation-delay:1.5s;
+    animation-fill-mode: backwards;
+}
+
+button {
+    animation-name:fadein-pop;
+    animation-duration:0.5s;
+    animation-delay:3s;
+    animation-timing-function:ease-out;
+    animation-fill-mode: backwards
+}
+
+/* --- PHONE SCREENS ---- */
+/* --- PHONE SCREENS ---- */
+
+@media (max-width:375px){
+
+    body {
+        min-width:260px;
+        max-width:375px;
+        height:800px;
+        margin:0;
+        align-items:flex-start;
+    }
+        
+    #card {
+        width:100%;
+        /* height:100%; */
+        display:flex;
+        flex-direction:column;
+        border-radius:0;
+    }
+    
+    .card {
+        height:100%;
+        width:100%;
+        flex-direction:column;
+        gap:1.5em;
+        border-radius:0;
+    }
+    
+    /* ----- L E F T    C A R D ----- */
+    /* ----- L E F T    C A R D ----- */
+    
+    .left {
+        border-radius:0 0 30px 30px;
+    }
+    
+    /* ---- R I G H T    C A R D ---- */
+    /* ---- R I G H T    C A R D ---- */
+    
+    .right {
+        background-color:white;
+        gap:1em;
+    }
+    
+    #summary{
+        align-self:flex-start;
+    }
+
+    .test:nth-child(2), .test:nth-child(3), .test:nth-child(4) {
+        margin-bottom:0;
+        }
+
+    .test:nth-child(5) {
+        margin-bottom:20px;
+        }
+
+}
+
+/* ----- A N I M A T I O N S ----- */
+/* ----- A N I M A T I O N S ----- */
+/* ----- A N I M A T I O N S ----- */
+
+@keyframes fadein-pop{
+        0% {
+            opacity: 0;
+            transform:scale(0%)
+        }
+        40% {
+            opacity:1;
+        transform:scale(120%)}
+
+        70%{
+            transform:scale(80%)
+        }
+
+        90%{
+            transform:scale(110%)
+        }
+
+        100%{
+            transform:scale(100%)
+        }
+    
+}
+
+@keyframes fadein {
+    0%{
+        opacity:0
+    }
+
+    100%{
+        opacity:1
+    }
+}
