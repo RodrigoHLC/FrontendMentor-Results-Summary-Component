@@ -30,7 +30,7 @@ p {
     color:white;
 }
 
-.card {
+.half-card {
     width:300px;
     display:flex;
     flex-direction:column;
@@ -44,7 +44,7 @@ p {
     border-radius:25px;
 }
 
-.card *{
+.half-card *{
     margin:0;
 }
 
@@ -264,7 +264,7 @@ button {
         border-radius:0;
     }
     
-    .card {
+    .half-card {
         height:100%;
         width:100%;
         flex-direction:column;
